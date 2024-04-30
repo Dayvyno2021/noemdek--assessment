@@ -1,8 +1,36 @@
+
+.hamburger{
+  display: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  outline: none;
+  border: none;
+
+  & svg{
+    color: $color-primary;
+    font-size: 2rem;
+  }
+  @media only screen and (max-width: $medium){
+    display: block;
+  }
+
+
+}
+
 .sidebar{
   background-color: $color-primary;
-  min-height: 100vh;
   color: $color-white;
   font-size: .875rem;
+  display: block;
+
+  @media only screen and (max-width: $medium){
+    display: none;
+    background-color: red;
+  }
   
   &-top{
     display: flex;

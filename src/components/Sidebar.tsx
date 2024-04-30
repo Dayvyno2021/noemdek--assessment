@@ -3,9 +3,21 @@ import { IoPersonOutline } from "react-icons/io5";
 import { MdHome } from "react-icons/md";
 import { NavElementsType, icons, navElements } from "../data";
 import { FaCaretDown } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import { FaHamburger } from "react-icons/fa";
+import Modal from "./Modal";
 
 const Sidebar = () => {
+
+  const navigate = useNavigate()
+    const [openModal, setOpenModal] = useState(false);
+    //Handles the sliding in of the modal 
+
+    const handleModal = () => {
+      setOpenModal(prev=>!prev);
+    }
+
+
   const location = useLocation()
   const pathname = location.pathname
 
@@ -18,8 +30,32 @@ const Sidebar = () => {
     setTabElement(clonedTab);
   }, [])
 
+  const router = () => {
+    setOpenModal(false);
+    navigate('/scheduling');
+  }
+
   return (
     <>
+        {
+          openModal && (
+          <Modal>
+              <button style={{zIndex: '120'}} className="hamburger" onClick={()=>setOpenModal(false)}>
+                <FaHamburger />
+              </button>
+                <div className="modal" >
+                  <button className="modalBtn" onClick={()=>router()}>
+                    Scheduling
+                  </button>
+                </div>
+            </Modal>
+          )
+      }
+
+
+      <button className="hamburger" onClick={()=>handleModal()}>
+        <FaHamburger />
+      </button>
       <nav className='sidebar'>
         <div className="sidebar-top">
           <div className="sidebar-top-user-image">

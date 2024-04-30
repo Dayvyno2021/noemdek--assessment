@@ -79,8 +79,6 @@ const ScheduleContent = () => {
         })
       }
     } 
-
-
     return dateStorage;
   }, [value, dateType])
 
@@ -90,8 +88,6 @@ const ScheduleContent = () => {
     }
     return vehiclesData
   }, [schedule]);
-
-
 
   return (
     <div className="schedule-content">
@@ -120,7 +116,7 @@ const ScheduleContent = () => {
         </div>
       </div>
       <div className="schedule-content--main">
-        <div className="main--title">
+        <div className="main--title hide">
           <p className='header--large text--center'> {dateRange(value, selectedDateType!)} </p>
         </div>
         <div className="calender">

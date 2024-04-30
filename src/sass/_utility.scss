@@ -104,3 +104,20 @@ a{
   color: green;
   font-size: 0.6rem;
 }
+
+.modalBtn{
+  margin-top: 5rem;
+  background-color: $color-primary;
+  color: $color-white;
+  padding: 1rem 2rem;
+  border-radius: .2rem;
+  text-decoration: none;
+  transition: all .3s;
+  border-radius: .3rem;
+  border: none;
+  outline: none;
+
+  &:hover {
+    background-color: lighten($color: $color-primary, $amount: 10);
+  }
+}

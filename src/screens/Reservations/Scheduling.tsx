@@ -23,7 +23,7 @@ const Scheduling = () => {
                   </Link>
                 ))
               }
-              <Link to='/'>
+              <Link to='/' className="logo">
                 <img src="/images/noemdek-logo.png" alt="Noemdek Logo"  />
               </Link>
             </div>

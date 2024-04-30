@@ -10,17 +10,40 @@
     gap: 1rem;
     width: 100%;
   }
-}
 
+  @media only screen and (max-width: $medium){
+    margin-top: 5rem;
+  }
+}
 .search-zone{
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: $large){
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
 
   &>form{
     width: 30%;
     background-color: $color-white;
     height: 2rem;
     position: relative;
+
+    @media only screen and (max-width:$large){
+      display: block;
+      width: 40%;
+      margin: 0 auto;
+      order: 2;
+    }
+
+    @media only screen and (max-width: $medium) {
+      width: 80%;
+    }
+    @media only screen and (max-width: $small) {
+      width: 90%;
+    }
 
     &>label[for]{
       position: absolute;
@@ -41,6 +64,22 @@
     gap: 1.5rem;
     justify-content: end;
     align-items: center;
+
+    @media only screen and (max-width: $large){
+      margin: 0 auto;
+      width: max-content;
+    }
+    @media only screen and (max-width: $small){
+      flex-direction: column;
+      margin: 0 auto;
+      gap: .2rem;
+    }
+
+    .logo{
+      @media only screen and (max-width: $small){
+        order: -1;
+      }
+    }
 
     &-topics{
       display: flex;
@@ -67,13 +106,23 @@
 
 .schedule-metrics{
   width: 100%;
-  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 
-  h2{
+  @media only screen and (max-width: $large){
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  h1{
     width: max-content;
+    @media only screen and (max-width: $large){
+      // order: 1;
+    }
   }
 
   .metrics-container{
@@ -85,6 +134,21 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr) 2fr;
     grid-gap: .1rem;
+    
+    @media only screen and (max-width: $large){
+      width: 100%;
+      order: -1;
+    }
+    
+    @media only screen and (max-width: $small){
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media only screen and (max-width: $smallest){
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
 
     .metric{
       height: 100%;
@@ -202,6 +266,11 @@
       width: 100%;
       & p{
         width: 50%;
+
+        @media only screen and (max-width: $large){
+          width: 100%;
+          margin: 2rem 0;
+        }
       }
     }
     .calender{
@@ -209,10 +278,21 @@
       width: 100%;
       gap: 1rem;
 
+      @media only screen and (max-width: $large){
+        flex-direction: column;
+        gap: 2rem;
+        // justify-content: center;
+      }
+
       &--display{
         width: 25%;
         display: flex;
         justify-content: center;
+
+        @media only screen and (max-width: $large){
+          width: max-content;
+          margin: 0 auto;
+        }
       }
 
       &--table{
@@ -222,11 +302,16 @@
         background-color: $color-white;
         display: flex;
         align-items: start;
+        overflow: scroll;
+
+        @media only screen and (max-width: $large) {
+          width: 100%;
+        }
 
         #schedule-table {
           width: 100%;
-          // border-bottom: 2px $color-neutral-400 solid;
           border-collapse: collapse;
+          overflow: scroll;
 
           & thead{
             width: 100%;
@@ -236,6 +321,8 @@
             border-bottom: 2px $color-neutral-400 solid;
             height: 3.2rem;
             font-weight: 700;
+            // width: max-content;
+            padding: .5rem .5rem;
             // font-size: 0.7rem;
             &:first-of-type{
               width: 25%;
@@ -262,6 +349,7 @@
             display: flex;
             padding: .5rem;
             gap: .5rem;
+            width: 12rem;
             border-right: 2px $color-neutral-400 solid;
             
             // background-color: red;
