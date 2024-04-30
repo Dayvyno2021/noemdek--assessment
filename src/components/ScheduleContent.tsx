@@ -132,7 +132,7 @@ const ScheduleContent = () => {
             <table id='schedule-table'>
               <thead>
                 <tr>
-                  <th className=''>{schedule}</th>
+                  <th className='first--column'>{schedule}</th>
                   {
                     getWeekDays()?.map((day) => (
                       <th key={day}> {day} </th>
@@ -144,7 +144,7 @@ const ScheduleContent = () => {
                 {
                   repType?.map((rep) => (
                     <tr key={rep?.name}>
-                      <td className="schedule-table__contain">
+                      <td className="schedule-table__contain first--column">
                         <img src={rep?.image} alt={rep?.name} />
                         <span className="schedule-table__texts">
                           <h3 className='header--light'> {rep?.name} </h3>

@@ -18,7 +18,12 @@ const Scheduling = () => {
               {
                 topics.map((topic) => (
                   <Link key={topic.title} to={`${topic.link}`} className="search-zone-nav-topics">
-                    <span style={{display:'flex', alignItems:'center'}}> {topic.icon} </span>
+                    <span style={{ display: 'flex', alignItems: 'center' }}> {topic.icon} </span>
+                    {
+                      topic?.spot ? (
+                        <span className="red--spot"></span>
+                      ):('')
+                    }
                     <p> {topic.title} </p>
                   </Link>
                 ))

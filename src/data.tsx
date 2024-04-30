@@ -44,9 +44,9 @@ export const navElements: NavElementsType[] = [
 ]
 
 export const topics = [
-  { title: "Notificatioons", icon: <NotificationIcon />, link: '/notifications'},
-  { title: "Tools", icon: <MdOutlineSettings />, link: '/tools' },
-  {title: "Help", icon: <IoIosHelpCircle/>, link: '/help'}
+  { title: "Notificatioons", icon: <NotificationIcon />, link: '/notifications', spot: true},
+  { title: "Tools", icon: <MdOutlineSettings />, link: '/tools', spot: false },
+  {title: "Help", icon: <IoIosHelpCircle/>, link: '/help', spot: false}
 ]
 
 export const metricData = [

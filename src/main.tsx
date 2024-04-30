@@ -9,7 +9,7 @@ import Bookings from './screens/Reservations/Bookings.tsx';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
-      <Route index={true} path='/' element={<h3>Homepage is empty, navigate to scheduling</h3>}/>
+      <Route index={true} path='/' element={<h3 className='adjust'>Homepage is empty, navigate to scheduling</h3>}/>
       <Route path='/scheduling' element={<Scheduling/>}/>
       <Route path='/bookings' element={<Bookings/>}/>
       <Route path='/*' element={<h2>Page is vacant</h2>}/>
