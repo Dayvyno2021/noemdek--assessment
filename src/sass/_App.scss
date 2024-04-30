@@ -1,0 +1,12 @@
+.container {
+  max-width: $largest;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+.content{
+  background-color: $color-grey-light;
+  width: 100%;
+  padding: 1rem 2rem;
+}

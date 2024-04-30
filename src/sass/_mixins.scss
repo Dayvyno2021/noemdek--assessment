@@ -1,0 +1,28 @@
+@mixin icon{
+  font-size: 1.2rem;
+}
+
+@mixin remove-underline ($color:#000) {
+  text-decoration: none;
+  color: $color;
+}
+
+@mixin hoverDarken($color){
+  background-color: darken($color: $color, $amount: 10);
+}
+@mixin hoverLighten($color){
+  background-color: lighten($color: $color, $amount: 10);
+}
+
+@mixin inputTag{
+  width: 100%;
+  height: 100%;
+  border: 1px $color-grey-dark solid;
+  border-radius: .2rem;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 10px $color-primary;
+  }
+}

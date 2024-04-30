@@ -1,0 +1,106 @@
+.icon{
+  @include icon;
+}
+
+.rotate-180{
+  transition: all .3s;
+  transform: rotate(180deg);
+}
+
+.primary-btn{
+  background-color: $color-white;
+  color: $color-primary;
+  padding: .5rem .3rem;
+  border-radius: .2rem;
+  text-decoration: none;
+}
+.btn{
+  background-color: $color-primary;
+  color: $color-white;
+  padding: .5rem .2rem;
+  border-radius: .2rem;
+  text-decoration: none;
+  transition: all .3s;
+
+  &:hover {
+    background-color: lighten($color: $color-primary, $amount: 10);
+  }
+}
+
+.white-rectangle{
+  display: inline-block;
+  width: .3rem;
+  height: 1.5rem;
+  background-color: $color-white;
+}
+
+a{
+  @include remove-underline;
+}
+
+.p1{
+  padding: .3rem .4rem;
+  border-radius: .3rem;
+}
+
+.left-radius{
+  border-radius: .4rem 0 0 .4rem;
+}
+.top-right-radius{
+  border-top-right-radius: .4rem;
+}
+
+.badgeGreen{
+  color: $color-green-400
+}
+
+.badgeOrange{
+  color: $color-orange-400
+}
+
+.header--large{
+  font-weight: 500;
+}
+
+.header--light{
+  font-weight: 700;
+  font-size: .7rem;
+}
+
+.font--small{
+  font-size: 0.6rem;
+}
+
+.btn--date{
+  padding: .5rem .7rem;
+  border: none;
+  cursor: pointer;
+}
+.btn--white{
+  background-color: $color-white;
+}
+.btn--primary{
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.text--center{
+  text-align: center;
+}
+
+.make--transparent{
+  background-color: transparent;
+}
+
+.grey-border{
+  border: 1px $color-neutral-400 solid;
+}
+
+.danger{
+  color: orangered;
+  font-size: 0.6rem;
+}
+.success{
+  color: green;
+  font-size: 0.6rem;
+}

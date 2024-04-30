@@ -1,0 +1,96 @@
+.sidebar{
+  background-color: $color-primary;
+  min-height: 100vh;
+  color: $color-white;
+  font-size: .875rem;
+  
+  &-top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+
+    &-user-image{
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background-color: $color-slate;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & svg{
+        color: $color-grey-dark;
+        font-size: 1.5rem;
+      }
+    }
+
+    &-user{
+      & *{
+        text-align: center;
+      }
+
+      &-portfolio{
+        font-size: .75rem;
+        color: $color-grey-dark;
+      }
+    }
+
+    &-title{
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      &:hover{
+        @include hoverLighten($color-primary)
+      }
+
+      & h3{
+        font-size: .9rem;
+        color: $color-white;
+
+      }
+    }
+  }
+
+  &-bottom{
+    padding: 2rem .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    &-item{
+      padding: .4rem .3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: .3rem;
+      transition: all .3s;
+
+      &:hover{
+        background-color: lighten($color: $color-primary, $amount: 10);
+      }
+      &-main {
+        display: flex;
+        gap: .3rem;
+        align-items: center;
+    
+        & svg {
+          @include icon;
+        }
+      }
+
+      &-children{
+        display: flex;
+        flex-direction: column;
+        padding-left: .1rem;
+        gap: .2rem;
+        & a{
+          display: flex;
+          gap: .5rem;
+        }
+      }
+    }
+  }
+}

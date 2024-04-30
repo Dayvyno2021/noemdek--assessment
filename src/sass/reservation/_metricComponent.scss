@@ -1,0 +1,46 @@
+.metric-comp{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: .3rem .2rem;
+  justify-content: space-between;
+  & > * {
+    color: $color-white;
+    font-size: 0.6rem;
+  }
+
+  .metric-amount{
+    font-size: 0.75rem;
+  }
+
+  &-details{
+    display: flex;
+    justify-content: space-between;
+
+    &>span{
+      font-size: 0.45rem;
+      background-color: $color-white;
+      align-self: end;
+      padding: .2rem .1rem;
+      border-radius: .3rem;
+      font-weight: 500;
+    }
+
+    &-more{
+      &-1{
+        font-weight: 500;
+      }
+      &>p{
+        text-align: end;
+      }
+    }
+  }
+}
+
+.orange-bg{
+  background-image: url('/images/orange.jpg');
+}
+
+.green-bg{
+  background-image: url('/images/green.jpg');
+}
