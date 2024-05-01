@@ -132,7 +132,6 @@ const ScheduleContent = () => {
   const onSchedule = (obj: DateStorageProps) => {
     setShowModal(true);
     setModalContents(obj);
-    console.table(obj);
   }
 
   return (
@@ -170,8 +169,8 @@ const ScheduleContent = () => {
             <Calendar
               onChange={onChange}
               value={value}
-              className={``}
               selectRange={true}
+              calendarType='gregory'
             />
           </div>
           <div className="calender--table">
