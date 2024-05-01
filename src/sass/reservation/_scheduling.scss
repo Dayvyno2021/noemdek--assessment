@@ -417,8 +417,9 @@
 .schedule--detail{
   width: 25rem;
   background-color: $color-white;
-  margin: .5rem auto;
+  margin: 0 auto;
   border-radius: 8px;
+  height: max-content;
 
   & h2, & h3, & h4, & h5, & p{
     font-size: 0.7rem;
