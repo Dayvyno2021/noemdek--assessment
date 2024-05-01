@@ -2,7 +2,6 @@ import {useCallback, useMemo, useState} from 'react'
 import { driverData, dateSelections, vehiclesData, DateSelectionsType } from '../data';
 import Calendar from 'react-calendar';
 import { Value, getCurrentWeek, months, singleDayInMilliSeconds, dateRange } from '../helper/currentWeek';
-import { FaHamburger } from 'react-icons/fa';
 import Modal from './Modal';
 import { MdModeEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
