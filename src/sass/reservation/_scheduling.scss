@@ -349,17 +349,12 @@
         }
 
         #schedule-table {
-          width: 100%;
+          width: max-content;
           border-collapse: collapse;
           overflow: scroll;
-
-          & thead{
-            width: 100%;
-          }
           
           & th{
             border-bottom: 2px $color-neutral-400 solid;
-            height: 3.2rem;
             font-weight: 700;
             padding: .5rem .5rem;
           }
@@ -367,6 +362,11 @@
           & td{
             font-size: .7rem;
             text-align: center;
+            padding: 0.5rem;
+            
+            &:not(:first-of-type){
+              width: 7rem;
+            }
           }
 
           & tbody{
@@ -377,19 +377,29 @@
 
           }
 
+          .data--filled{
+            background-color: #93c5fd;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: .1rem;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+
           .schedule-table__contain{
             display: flex;
             padding: .5rem;
             gap: .5rem;
 
             &>img{
-              height: 3rem;
+              width: 4rem;
               display: block;
               @media only screen and (max-width: $large){
-                height: 2.5rem;
+                width: 3.5rem;
               }
               @media only screen and (max-width: $medium){
-                height: 2rem;
+                width: 3rem;
               }
             }
 
@@ -398,6 +408,61 @@
             }
 
           }
+        }
+      }
+    }
+  }
+}
+
+.schedule--detail{
+  width: 30rem;
+  min-height: 70vh;
+  background-color: $color-white;
+  margin: 1rem auto;
+  border-radius: 8px;
+  hr {
+      border: 1px solid $color-grey-dark;
+    }
+
+  .overview{
+    padding: .5rem 0.8rem;
+    &--edit{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+
+      &>h1{
+        font-size: 1.5rem;
+      }
+      &__icons{
+        display: flex;
+        gap: .6rem;
+        padding-right: .5rem;
+
+        & span{
+          width: 1.6rem;
+          height: 1.6rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: all .3s;
+          border-radius: 3px;
+
+          &:hover{
+            background-color: rgba($color: $color-grey-dark, $alpha: .2);
+          }
+        }
+
+        & svg{
+          color: $color-grey-dark;
+        }
+        .close{
+          // margin-left: .6rem;
+        }
+        .edit{
+          background-color: $color-slate;
         }
       }
     }

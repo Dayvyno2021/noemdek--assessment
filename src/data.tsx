@@ -18,6 +18,7 @@ export interface RepType{
   position: string,
   image: string,
   repair?: boolean
+  weeks?: {[key:string]: {}}
 }
 
 export interface DateSelectionsType {
@@ -73,3 +74,8 @@ export const vehiclesData: RepType[] = [
   { name: "Lexus GLS 350", position: "Full Size SUV", image: '/images/lexus450.png', repair: false },
   { name: "Toyota Camry", position: "Mid Size Sedan", image: '/images/camry.png', repair: false }
 ]
+
+  // repTitle: string,
+  // username: string,
+  // coompany: string
+  //  repTitle: 'Lexus GLS 500', username: "Clinton", coompany: "British Petroleum"
