@@ -6,6 +6,7 @@ import Modal from './Modal';
 import { MdModeEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { MdClose } from "react-icons/md";
+import { FaRegStar } from "react-icons/fa";
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -48,6 +49,7 @@ const ScheduleContent = () => {
   const [dateType, setDateType] = useState<DateSelectionsType[]>(dateSelections);
   const [value, onChange] = useState<Value>(getCurrentWeek());
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [modalContents, setModalContents] = useState<Partial<DateStorageProps>>({})
   // const [weekDayData, setWeekDayData] = useState<StoragePropsType[]>([])
 
   const onDateSelect = (ind: number) => {
@@ -127,6 +129,12 @@ const ScheduleContent = () => {
     return vehiclesData
   }, [schedule]);
 
+  const onSchedule = (obj: DateStorageProps) => {
+    setShowModal(true);
+    setModalContents(obj);
+    console.table(obj);
+  }
+
   return (
     <div className="schedule-content">
       <div className="schedule-content-options">
@@ -201,7 +209,7 @@ const ScheduleContent = () => {
                       <td key={Math.random()}>
                         {
                           rep?.driver === Drv.david && 
-                            <div onClick={()=>setShowModal(true)} className={rep?.repTitle.length ? "data--filled" : ''}>
+                            <div onClick={()=>onSchedule(rep)} className={rep?.repTitle.length ? "data--filled" : ''}>
                               <h5> {schedule === Rep.driver?  rep?.repTitle[0]: rep?.repTitle[1]} </h5>
                               <span>{rep?.username} </span>
                               <span> {rep?.company} </span>
@@ -267,7 +275,7 @@ const ScheduleContent = () => {
                       <td key={Math.random()}>
                         {
                           rep?.driver === Drv.sunday && 
-                            <div onClick={()=>setShowModal(true)} className={rep?.repTitle ? "data--filled" : ''}>
+                            <div onClick={()=>onSchedule(rep)} className={rep?.repTitle ? "data--filled" : ''}>
                               <h5> {rep?.repTitle} </h5>
                               <span>{rep?.username} </span>
                               <span> {rep?.company} </span>
@@ -284,9 +292,9 @@ const ScheduleContent = () => {
             {
               showModal && (
               <Modal>
-                <div className="schedule--modal" >
-                  <div className="overview schedule--detail">
-                    <div className="overview--edit">
+                <div className="schedule--modal" onClick={() => { setShowModal(false)}} >
+                  <div className="overview schedule--detail" onClick={(e)=>e.stopPropagation()}>
+                    <div className="overview--edit px1">
                       <h1>Schedule Overview</h1>
                       <div className="overview--edit__icons">
                         <span className='edit'><MdModeEdit/></span>
@@ -295,6 +303,67 @@ const ScheduleContent = () => {
                       </div>
                     </div>
                     <hr />
+                    <div className="overview--car">
+                      <img src="/images/lexus500.png" alt="Lexus 500" />
+                      <div className="overview--car__details">
+                        <h3> {modalContents?.vehicle} </h3>
+                        <p> Full Size SUV </p>
+                        <p>Needs Repair</p>
+                      </div>
+                    </div>
+                    <div className="overview--detail px1">
+                      <div className="overview--detail__texts">
+                        <h4>Driver</h4>
+                        <p> {modalContents?.driver} </p>
+                      </div>
+                      <div className="overview--detail__texts">
+                        <h4>Customer:</h4>
+                        <p> {modalContents?.username} </p>
+                      </div>
+                      <div className="overview--detail__texts">
+                        <h4>Service:</h4>
+                        <p> Full Day Rental </p>
+                      </div>
+                      <div className="overview--detail__texts">
+                        <h4>Start Date:</h4>
+                        <p> {modalContents?.duration} </p>
+                      </div>
+                      <div className="overview--detail__texts">
+                        <h4>Start Date:</h4>
+                        <p> {modalContents?.duration} </p>
+                      </div>
+                      <div className="overview--detail__texts-2">
+                        <h4>Pickup Location: </h4>
+                        <p> Zuma Close, Osborne Phase 1 Estate, Ikoyi </p>
+                      </div>
+                      <div className="overview--detail__texts-2">
+                        <h4>Drop-Off Location: </h4>
+                        <p> Same as Pickup Location </p>
+                      </div>
+                    </div>
+                    <hr />
+                    <div className="overview--ratings px1 py05">
+                      <h4>Ratings: </h4>
+                      <div className="overview--ratings__stars">
+                        {
+                          [...Array(5).keys()].map((_ob) => (
+                            <FaRegStar key={Math.random()} className='icon-grey' />
+                          ))
+                        }
+                      </div>
+                    </div>
+                    <form className='overview--form py05'>
+                      <textarea name="overview--text-area" id="" cols={30} placeholder='Comment...' rows={3}></textarea>
+                      <div className="buttons">
+                        <button className="clear">Clear</button>
+                        <button className="save">Save</button>
+                      </div>
+                    </form>
+                    <hr />
+                    <div className="overview--creators px1 py05">
+                      <span className='font--small'>Created By: Okafor David</span>
+                      <span className='font--small'>Last Edit By: Okafor David</span>
+                    </div>
                   </div>
                 </div>
               </Modal>

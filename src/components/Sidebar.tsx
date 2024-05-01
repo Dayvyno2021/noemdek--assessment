@@ -65,7 +65,7 @@ const Sidebar = () => {
             <p className="sidebar-top-user-name">Okafor David</p>
             <p className="sidebar-top-user-portfolio">Admin</p>
           </div>
-          <div className="sidebar-top-title p1">
+          <div className="sidebar-top-title p03">
             <MdHome className="sidebar-top-title-image icon" />
             <Link to="/" className="sidebar-top-title-title">
               <h3>Home</h3>

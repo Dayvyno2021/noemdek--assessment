@@ -2,6 +2,10 @@
   @include icon;
 }
 
+.icon-grey{
+  color: $color-grey-dark;
+}
+
 .rotate-180{
   transition: all .3s;
   transform: rotate(180deg);
@@ -38,7 +42,7 @@ a{
   @include remove-underline;
 }
 
-.p1{
+.p03{
   padding: .3rem .4rem;
   border-radius: .3rem;
 }
@@ -128,3 +132,17 @@ a{
     text-align: center;
   }
 }
+
+.px1{
+  padding: 0 1rem;
+}
+
+.p1{
+  padding: .5rem;
+}
+
+.py05{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+

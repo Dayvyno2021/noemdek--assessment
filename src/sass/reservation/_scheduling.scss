@@ -415,11 +415,14 @@
 }
 
 .schedule--detail{
-  width: 30rem;
-  min-height: 90vh;
+  width: 25rem;
   background-color: $color-white;
-  margin: 1rem auto;
+  margin: .5rem auto;
   border-radius: 8px;
+
+  & h2, & h3, & h4, & h5, & p{
+    font-size: 0.7rem;
+  }
 
   @media only screen and (max-width: $small){
     width: 90vw;
@@ -429,17 +432,19 @@
     }
 
   .overview{
-    padding: .5rem 0.8rem;
+    padding: .5rem 0rem;
+
     &--edit{
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
+      padding-top: .5rem ;
+      padding-bottom: .5rem;
 
       &>h1{
-        font-size: 1.5rem;
+        font-size: 1rem;
         @media only screen and (max-width: $small) {
-          font-size: 1rem;
+          font-size: .8rem;
         }
       }
       &__icons{
@@ -448,8 +453,8 @@
         padding-right: .5rem;
 
         & span{
-          width: 1.6rem;
-          height: 1.6rem;
+          width: 1.3rem;
+          height: 1.3rem;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -464,14 +469,103 @@
 
         & svg{
           color: $color-grey-dark;
-        }
-        .close{
-          // margin-left: .6rem;
+          font-size: .8rem;
         }
         .edit{
           background-color: $color-slate;
         }
       }
+    }
+
+    &--car{
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      padding: .5rem ;
+
+      & img{
+        width: 12rem;
+      }
+
+      & p:last-of-type{
+        color: orangered;
+      }
+    }
+
+    &--detail{
+      display: flex;
+      flex-direction: column;
+      padding-bottom: .5rem;
+      gap: .6rem;
+
+      &__texts{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        & h4{
+          min-width: max-content;
+          width: 7rem;
+        }
+      }
+    }
+
+    &--ratings{
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+
+      &__stars{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+
+      & textarea{
+        outline: none;
+        border: 2px solid $color-grey-dark;
+        border-radius: .3rem;
+        padding: 0.5rem;
+        width: 80%;
+        resize: none;
+      }
+
+      & .buttons{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 1rem;
+        padding-left: 1rem;
+
+        & button{
+          border: none;
+          outline: none;
+          font-size: .8rem;
+          font-weight: 600;
+          padding: .2rem .5rem;
+          border-radius: .3rem;
+          cursor: pointer;
+          transition: all .3s;
+
+          &:hover{
+            background-color: rgba($color: $color-grey-dark, $alpha: .2);
+          }
+        }
+
+        & .save{
+          background-color: $color-grey-light;
+        }
+      }
+    }
+    &--creators{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }
