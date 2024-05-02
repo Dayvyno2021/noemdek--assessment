@@ -10,7 +10,7 @@ interface MetricProps{
   topRadius?: string
 }
 
-const MetricComponent:React.FC<MetricProps> = ({amount, profit, header, desc, bg,badgeColor, topRadius}) => {
+const MetricComponent:React.FC<MetricProps> = ({amount, profit, header, desc, bg,badgeColor, topRadius,}) => {
   return (
     <div className={`metric-comp left-radius metric ${bg} ${topRadius}`}>
       <h1 className="metric-amount"> &#36;{amount} </h1>

@@ -45,7 +45,7 @@ const Scheduling = () => {
                     desc={m.desc}
                     bg={i === 0 ? "orange-bg" : "green-bg"}
                     badgeColor={i === 0 ? "badgeOrange" : "badgeGreen"}
-                    topRadius="top-right-radius"
+                    topRadius="top-right-radius small-metric"
                   />
                 ))
               }
@@ -57,6 +57,7 @@ const Scheduling = () => {
                   desc="Pipeline"
                   bg="orange-bg"
                   badgeColor="badgeOrange"
+                  topRadius="big-metric"
                 />
                 <div className="large-metric-2">
                   <div className="large-metric-2-child-1"> &#36;70m - &#36;100m (High) </div>
