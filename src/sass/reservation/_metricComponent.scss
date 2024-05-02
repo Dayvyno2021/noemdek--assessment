@@ -9,6 +9,11 @@
     font-size: 0.6rem;
   }
 
+  &:nth-of-type(5){
+    position: relative;
+    left: 50%;
+  }
+
   .metric-amount{
     font-size: 0.75rem;
   }
