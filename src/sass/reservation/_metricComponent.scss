@@ -9,9 +9,11 @@
     font-size: 0.6rem;
   }
 
-  &:nth-of-type(5){
-    position: relative;
-    left: 50%;
+  @media only screen and (max-width: $small){
+    &:nth-of-type(5){
+      position: relative;
+      left: 50%;
+    }
   }
 
   .metric-amount{
