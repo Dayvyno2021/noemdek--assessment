@@ -131,8 +131,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
 
   h1{
@@ -148,6 +148,9 @@
     grid-template-columns: repeat(5, 1fr) 2fr;
     grid-gap: .1rem;
     
+    @media only screen and (max-width: $large){
+      order: -1;
+    }
     @media only screen and (max-width: 61rem){
       grid-template-columns: repeat(3, minmax(73px, 115px));
       gap: .3rem;
@@ -157,7 +160,6 @@
     }
 
     .metric{
-      // height: 100%;
       height: 76px;
       background-size: cover;
       background-repeat: no-repeat;
@@ -165,7 +167,6 @@
 
     .large-metric{
       display: flex;
-      // width: 12.5rem;
       @media only screen and (max-width: 970px){
         grid-row: 3 / span 1;
         grid-column: 1 / span 2;
