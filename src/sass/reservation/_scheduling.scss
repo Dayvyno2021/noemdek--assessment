@@ -94,6 +94,10 @@
       @include remove-underline;
       position: relative;
 
+      @media only screen and (max-width: $small){
+        width: 100%;
+      }
+
       .red--spot{
         display: block;
         width: 5px;
