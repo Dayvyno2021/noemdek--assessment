@@ -66,6 +66,6 @@ export function dateRange(dateRange: Value, rangeType: string):string {
   } else if (rangeType === DateDataType.day) {
     return `${months[startMonth].month} 01 - ${months[startMonth].max}, ${endYear}`
   } else {
-    return "Year: " + startYear;
+    return "January - December, " + startYear;
   }
 }
